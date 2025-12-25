@@ -67,3 +67,17 @@ void init() {
     initBlackHole();
     srand(time(NULL));
   
+    for(int i = 0; i < 50; i++) {
+        float angle = (i / 50.0f) * 2.0f * PI;
+        float dist = 150.0f + (rand() % 100);
+        float x = cos(angle) * dist;
+        float y = sin(angle) * dist;
+        
+
+        float v = sqrt(blackHole.mass / dist) * 0.8f;
+        float vx = -sin(angle) * v;
+        float vy = cos(angle) * v;
+        
+        addParticle(x, y, vx, vy);
+    }
+}
