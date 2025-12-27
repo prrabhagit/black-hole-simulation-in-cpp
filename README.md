@@ -81,3 +81,22 @@ void init() {
         addParticle(x, y, vx, vy);
     }
 }
+
+void updateParticles(float dt) {
+    for(auto& p : particles) {
+        if(!p.active) continue;
+        
+
+        float dx = blackHole.x - p.x;
+        float dy = blackHole.y - p.y;
+        float dist = sqrt(dx*dx + dy*dy);
+        
+        
+        if(dist < blackHole.eventHorizon) {
+            p.life -= 0.05f;
+            if(p.life <= 0.0f) {
+                p.active = false;
+                continue;
+            }
+        }
+        
