@@ -99,4 +99,18 @@ void updateParticles(float dt) {
                 continue;
             }
         }
+         
+        if(dist > 1.0f) {
+            float force = blackHole.mass / (dist * dist);
+            float ax = (dx / dist) * force;
+            float ay = (dy / dist) * force;
+            
+            
+            p.vx += ax * dt;
+            p.vy += ay * dt;
+        }
         
+        
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+           
