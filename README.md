@@ -129,3 +129,14 @@ void drawCircle(float cx, float cy, float r, int segments) {
     glEnd();
 }
 
+void drawFilledCircle(float cx, float cy, float r, int segments) {
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2f(cx, cy);
+    for(int i = 0; i <= segments; i++) {
+        float theta = 2.0f * PI * float(i) / float(segments);
+        float x = r * cosf(theta);
+        float y = r * sinf(theta);
+        glVertex2f(x + cx, y + cy);
+    }
+    glEnd();
+}
