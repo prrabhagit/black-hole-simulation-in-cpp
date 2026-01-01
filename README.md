@@ -140,3 +140,15 @@ void drawFilledCircle(float cx, float cy, float r, int segments) {
     }
     glEnd();
 }
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    float aspect = (float)WIDTH / (float)HEIGHT;
+    glOrtho(-400.0f * aspect * cameraZoom, 400.0f * aspect * cameraZoom, 
+            -400.0f * cameraZoom, 400.0f * cameraZoom, -1, 1);
+    
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    
