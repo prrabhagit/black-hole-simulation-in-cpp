@@ -151,4 +151,10 @@ void display() {
     
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    
+      // Draw accretion disk glow
+    for(int i = 10; i > 0; i--) {
+        float alpha = 0.02f * i;
+        glColor4f(1.0f, 0.5f, 0.0f, alpha);
+        drawFilledCircle(blackHole.x, blackHole.y, 
+                        blackHole.eventHorizon + i * 5.0f, 50);
+    }
