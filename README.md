@@ -158,3 +158,12 @@ void display() {
         drawFilledCircle(blackHole.x, blackHole.y, 
                         blackHole.eventHorizon + i * 5.0f, 50);
     }
+        // Draw event horizon
+    glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
+    drawFilledCircle(blackHole.x, blackHole.y, blackHole.eventHorizon, 50);
+    
+    // Draw event horizon boundary
+    glColor4f(1.0f, 0.3f, 0.0f, 0.8f);
+    glLineWidth(2.0f);
+    drawCircle(blackHole.x, blackHole.y, blackHole.eventHorizon, 50);
+    
