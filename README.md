@@ -167,3 +167,12 @@ void display() {
     glLineWidth(2.0f);
     drawCircle(blackHole.x, blackHole.y, blackHole.eventHorizon, 50);
     
+    // Draw photon sphere
+    glColor4f(0.5f, 0.5f, 1.0f, 0.3f);
+    glLineWidth(1.0f);
+    drawCircle(blackHole.x, blackHole.y, blackHole.eventHorizon * 1.5f, 50);
+    
+    // Draw particles and trails
+    for(const auto& p : particles) {
+        if(!p.active) continue;
+        
