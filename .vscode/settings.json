@@ -1,0 +1,9 @@
+{
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "files.associations": {
+        "*.glsl": "glsl",
+        "*.vert": "glsl",
+        "*.frag": "glsl"
+    }
+}
